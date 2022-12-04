@@ -18,7 +18,8 @@
       "@components/*": ["./src/components/*"],
       "@utills/*": ["./src/utills/*"],
       "@ui/*": ["./src/ui/*"],
-      "@public/*": ["./public/*"]
+      "@public/*": ["./public/*"],
+      "@styles/*": ["./styles/*"]
     },
     "baseUrl": "."
   },
