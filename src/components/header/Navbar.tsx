@@ -1,4 +1,5 @@
 import { AppBar, Box, Container, Typography } from '@mui/material';
+import Cursor from '@ui/Cursor';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import DesktopNavbar from './DesktopNavbar';
@@ -29,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
   ];
 
   return (
-    <Box sx={{ overflow: 'hidden' }}>
+    <Box>
       <AppBar
         sx={{
           maxHeight: navHeight,
@@ -43,9 +44,18 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
         </Container>
       </AppBar>
       <Box sx={{ height: navHeight }} />
-      <Box sx={{ bgcolor: 'primary.main', color: 'secondary.main' }}>
+      <Box
+        sx={{
+          bgcolor: 'primary.main',
+          color: 'secondary.main',
+          width: '100%',
+          height: '100%',
+          overflow: 'hidden',
+        }}
+      >
         {children}
       </Box>
+      <Cursor />
     </Box>
   );
 };
