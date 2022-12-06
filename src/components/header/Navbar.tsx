@@ -1,6 +1,7 @@
-import { AppBar, Box, Container, Typography } from '@mui/material';
+import { AppBar, Box, Container, Typography, useTheme } from '@mui/material';
 import Cursor from '@ui/Cursor';
-import React from 'react';
+import IconContact from '@ui/IconContact';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import DesktopNavbar from './DesktopNavbar';
 import MobileNavbar from './MobileNavbar';
@@ -13,6 +14,8 @@ export const navHeight = 56;
 
 const Navbar: React.FC<NavbarProps> = ({ children }) => {
   const { t } = useTranslation('common');
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const theme = useTheme();
 
   const menu = [
     {
@@ -29,9 +32,13 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
     },
   ];
 
+  const handleDrawer = () => {
+    setOpenDrawer(!openDrawer);
+  };
+
   return (
     <Box>
-      {/* <AppBar
+      <AppBar
         sx={{
           maxHeight: navHeight,
           height: '100%',
@@ -39,10 +46,20 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
         }}
       >
         <Container sx={{ height: '100%' }}>
-          <DesktopNavbar menu={menu} />
-          <MobileNavbar menu={menu} spacing={navHeight} />
+          <DesktopNavbar
+            menu={menu}
+            handleOpenDrawer={handleDrawer}
+            openDrawer={openDrawer}
+          />
+          <MobileNavbar
+            zIndex={theme.zIndex.appBar}
+            openDrawer={openDrawer}
+            handleOpenDrawer={handleDrawer}
+            menu={menu}
+            spacing={navHeight}
+          />
         </Container>
-      </AppBar> */}
+      </AppBar>
       <Box sx={{ height: navHeight }} />
       <Box
         sx={{
@@ -55,7 +72,8 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
       >
         {children}
       </Box>
-      {/* <Cursor /> */}
+      <Cursor />
+      <IconContact zIndex={theme.zIndex.appBar} />
     </Box>
   );
 };

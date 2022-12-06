@@ -1,7 +1,6 @@
 import { navHeight } from '@components/header/Navbar';
-import { Box, Container, IconButton, Typography } from '@mui/material';
+import { Box, Container, Typography, useTheme } from '@mui/material';
 import gsap, { SteppedEase } from 'gsap';
-import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
 import { TextPlugin } from 'gsap/dist/TextPlugin';
 
@@ -12,6 +11,7 @@ const HeadSection: React.FC<HeadSectionProps> = () => {
   const secondaryText = useRef<HTMLHeadElement>(null);
   const cursorTyping = useRef<HTMLHeadElement>(null);
   const namingText = 'RAMIL ARTHAN';
+  const theme = useTheme();
 
   useEffect(() => {
     const contextAnimation = gsap.context(() => {
@@ -41,20 +41,6 @@ const HeadSection: React.FC<HeadSectionProps> = () => {
     return () => contextAnimation.clear();
   }, []);
 
-  const icons = [
-    {
-      image: '/static/images/homepage/github-icons.png',
-      alt: 'github-icons',
-    },
-    {
-      image: '/static/images/homepage/linkedin-icons.png',
-      alt: 'linkedin-icons',
-    },
-    {
-      image: '/static/images/homepage/ig-icons.png',
-      alt: 'ig-icons',
-    },
-  ];
   return (
     <Box
       sx={{
@@ -105,26 +91,6 @@ const HeadSection: React.FC<HeadSectionProps> = () => {
           >
             SOFTWARE ENGINEER & FRONT END DEVELOPER.
           </Typography>
-        </Box>
-        <Box
-          sx={{
-            position: 'absolute',
-            display: 'flex',
-            flexDirection: { md: 'column', xs: 'row' },
-            transform: {
-              xs: 'translate(-100%, 0%)',
-              md: 'translate(0%, 50%)',
-            },
-            left: { md: 0, xs: '100%' },
-            bottom: { xs: 0, md: '50%' },
-            p: 1,
-          }}
-        >
-          {icons.map((each, index) => (
-            <IconButton key={index}>
-              <Image width={23} height={23} alt={each.alt} src={each.image} />
-            </IconButton>
-          ))}
         </Box>
       </Container>
     </Box>

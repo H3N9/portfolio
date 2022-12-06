@@ -38,13 +38,14 @@ const Cursor: React.FC<CursorProps> = () => {
     <Box
       ref={cursorRef}
       sx={{
-        bgcolor: 'white',
+        bgcolor: 'secondary.main',
         position: 'fixed',
         zIndex: theme.zIndex.appBar + 1,
         borderRadius: '50%',
         mixBlendMode: 'difference',
         width: 25,
         height: 25,
+        pointerEvents: 'none',
       }}
     />
   );

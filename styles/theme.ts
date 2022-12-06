@@ -1,12 +1,15 @@
 import { createTheme } from '@mui/material/styles';
 
+const primary = '#1A1A1A';
+const secondary = '#F5F5F5';
+
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1A1A1A',
+      main: primary,
     },
     secondary: {
-      main: '#F5F5F5',
+      main: secondary,
     },
     text: {
       primary: '#414042',
@@ -75,14 +78,6 @@ const theme = createTheme({
     MuiButton: {
       defaultProps: {
         variant: 'contained',
-      },
-      styleOverrides: {
-        containedPrimary: {
-          color: 'white',
-        },
-        containedSecondary: {
-          color: 'white',
-        },
       },
     },
   },
