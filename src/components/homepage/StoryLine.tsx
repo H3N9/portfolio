@@ -12,21 +12,19 @@ const StoryLine: React.FC<StoryLineProps> = () => {
   const container = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const animation = gsap.context(() => {
-      const windowHeight = window.innerHeight;
-      ScrollTrigger.create({
-        trigger: container.current,
-        end: `+=${3000}`,
-        pin: true,
-        markers: true,
-      });
+    const windowHeight = window.innerHeight;
+    ScrollTrigger.create({
+      trigger: container.current,
+      end: `+=${windowHeight * 5} top`,
+      pin: true,
+      markers: true,
     });
-    return () => animation.clear();
   }, []);
 
   return (
     <Box sx={{ width: '100%', height: 'fit-content' }}>
-      {/* <HeadSection /> */}
+      <HeadSection />
+      <Box height={400} width="100%" />
       <Box
         ref={container}
         sx={{
@@ -131,6 +129,7 @@ const StoryLine: React.FC<StoryLineProps> = () => {
           </Box>
         </Container> */}
       </Box>
+      <Box height={400} width="100%" />
     </Box>
   );
 };

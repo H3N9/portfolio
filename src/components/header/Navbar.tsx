@@ -31,7 +31,7 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
 
   return (
     <Box>
-      <AppBar
+      {/* <AppBar
         sx={{
           maxHeight: navHeight,
           height: '100%',
@@ -40,9 +40,9 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
       >
         <Container sx={{ height: '100%' }}>
           <DesktopNavbar menu={menu} />
-          {/* <MobileNavbar menu={menu} spacing={navHeight} /> */}
+          <MobileNavbar menu={menu} spacing={navHeight} />
         </Container>
-      </AppBar>
+      </AppBar> */}
       <Box sx={{ height: navHeight }} />
       <Box
         sx={{
@@ -55,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
       >
         {children}
       </Box>
-      <Cursor />
+      {/* <Cursor /> */}
     </Box>
   );
 };
