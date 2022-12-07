@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Divider,
-  Drawer,
-  Typography,
-  useTheme,
-} from '@mui/material';
+import { Box, Button, Drawer, Typography } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
 

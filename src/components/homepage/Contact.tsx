@@ -1,12 +1,19 @@
 import { Box, Button, Container, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 interface ContactProps {}
 
 const Contact: React.FC<ContactProps> = () => {
+  const container = useRef<HTMLElement>(null);
+  const contactContainer = useRef<HTMLElement>(null);
+
+  useEffect(() => {}, []);
+
   return (
     <Box
-      id="contact"
+      ref={container}
       sx={{
         width: '100%',
         height: '100vh',
