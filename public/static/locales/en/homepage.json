@@ -1,0 +1,56 @@
+{
+  "contact": {
+    "title": "Contact",
+    "key-title": "Get In Touch",
+    "description": "Feel free if you've any question",
+    "send-email": "Send E-mail",
+    "resume": "Resume"
+  },
+  "content": {
+    "title-1": "Experiences",
+    "title-2": "Expertises"
+  },
+  "experiences": {
+    "card-1": {
+      "title": "Shippop (Part-time) Jan 2022 - Present",
+      "responsibility": {
+        "title": "Responsibility",
+        "lists": {
+          "1": "Planning work task from product backlog each sprint.",
+          "2": "Analysis & design system from UX/UI prototype.",
+          "3": "Implement Front-end and API gateway.",
+          "4": "made security for authorization and transection system.",
+          "5": "Imporving SEO performances and tracking website for analytic via Clarity and Google analytics.",
+          "6": "Testing and evaluating system before deployment.",
+          "7": "Automate testing on CI with Cypress.",
+          "8": "Deploying CI/CD using Azure DevOps.",
+          "9": "Design and setting infrastructure.",
+          "10": "Controling multiple Enviorment."
+        }
+      }
+    },
+    "card-2": {
+      "title": "Shippop (Coperation Eudacation) Aug 2021 - Nov 2021",
+      "responsibility": {
+        "title": "Responsibility",
+        "lists": {
+          "1": "analysis and design system from product owner's requirement.",
+          "2": "Implement Client-side and API gateway.",
+          "3": "Implement Front-end and API gateway.",
+          "4": "be advisor and consult best pratice for developing.",
+          "5": "adjust legacy system along with improving security and performance."
+        }
+      }
+    }
+  },
+  "expertise": {
+    "title": "Software Devlopment",
+    "description": "In order to achieve the veriest result of product, a must be choosing the tool which appropriate the product.also choosing suited algorithm and the best practice to approach our goal. for my best solution for choosing tooling is using SSR to develop the product that base on security and hight performance.",
+    "quotation": "Use the right tool with the right job."
+  },
+  "conclusion": {
+    "title": "That's not all of my experience",
+    "persuade": "Let's go to see it",
+    "see-more-project": "See more projects"
+  }
+}

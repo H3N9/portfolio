@@ -38,6 +38,7 @@ const ProjectCardDesktop: React.FC<ProjectCardDesktopProps> = ({ reverse }) => {
           flexDirection: 'column',
           height: 400,
           width: '50%',
+          zIndex: 2,
         }}
       >
         <Typography>dsadsa</Typography>

@@ -15,11 +15,10 @@ const IconCard: React.FC<IconCardProps> = ({ image, alt, title }) => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        px: 1,
+        pl: 4,
       }}
     >
       <Image width={60} height={60} src={image} alt={alt} />
-      <Typography variant="h6">{title}</Typography>
     </Box>
   );
 };

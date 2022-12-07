@@ -7,6 +7,8 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import ToolContainer from './storiesLine/ToolContainer';
 import { programmingIcons } from '@utills/iconsStory';
 import Summary from './storiesLine/Summary';
+import TitleSection from './sections/TitleSection';
+import ContentSection from './sections/ContentSection';
 
 const BoxLeft = styled(Box)({
   position: 'absolute',
@@ -17,7 +19,7 @@ interface StoryLineProps {}
 
 const StoryLine: React.FC<StoryLineProps> = () => {
   const lengthContentMask = 3;
-  const scaleHeight = 2;
+  const scaleHeight = 1.5;
   const container = useRef<HTMLDivElement>(null);
   const contentMask = useRef<HTMLDivElement>(null);
   const contentContainer = useRef<HTMLDivElement>(null);
@@ -42,7 +44,7 @@ const StoryLine: React.FC<StoryLineProps> = () => {
 
     ScrollTrigger.create({
       trigger: container.current,
-      end: `+=${windowHeight * 3.5} top`,
+      end: `+=${windowHeight * 4} top`,
       pin: true,
       markers: true,
     });
@@ -54,12 +56,12 @@ const StoryLine: React.FC<StoryLineProps> = () => {
       end: `+=${windowHeight * 2}`,
       pin: true,
       animation: gsap
-        .timeline()
+        .timeline({ defaults: { duration: 1 } })
         .to(firstTitle, {
-          autoAlpha: 0,
+          width: 0,
         })
         .to(lastTitle, {
-          autoAlpha: 1,
+          width: '100%',
         }),
       toggleActions: 'play reverse play reverse',
     });
@@ -198,27 +200,7 @@ const StoryLine: React.FC<StoryLineProps> = () => {
               sx={{ position: 'relative', height: '10%' }}
               ref={titleContainer}
             >
-              <Typography
-                variant="h3"
-                sx={{
-                  pb: 2,
-                  color: 'primary.main',
-                  position: 'absolute',
-                }}
-              >
-                Experiences
-              </Typography>
-              <Typography
-                variant="h3"
-                sx={{
-                  pb: 2,
-                  color: 'primary.main',
-                  position: 'absolute',
-                  opacity: 0,
-                }}
-              >
-                Expertises
-              </Typography>
+              <TitleSection />
             </Box>
             <Box
               sx={{
@@ -266,49 +248,7 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                 }}
                 ref={contentContainer}
               >
-                <BoxLeft>
-                  <Typography sx={{ height: 52 }} variant="h4">
-                    Title
-                  </Typography>
-                  <Typography variant="h6">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry is
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                  </Typography>
-                </BoxLeft>
-                <BoxLeft>
-                  <Typography sx={{ height: 52 }} variant="h4">
-                    Title
-                  </Typography>
-                  <Typography variant="h6">
-                    Lorem Ipsum is simply dummy text of the printing and
-                  </Typography>
-                </BoxLeft>
-                <BoxLeft>
-                  <Typography sx={{ height: 38 }} variant="h4">
-                    Title
-                  </Typography>
-                  <Grid container>
-                    <Grid item xs={12} md={6}>
-                      <Typography variant="h6">
-                        Lorem Ipsum is simply dummy text of the printing and
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <ToolContainer
-                        tools={programmingIcons}
-                        title="Programing Language"
-                      />
-                    </Grid>
-                  </Grid>
-                </BoxLeft>
+                <ContentSection />
               </Box>
             </Box>
           </Box>

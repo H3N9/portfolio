@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
@@ -9,6 +9,19 @@ interface IconContactProps {
 }
 
 const IconContact: React.FC<IconContactProps> = ({ zIndex }) => {
+  const [leftSize, setLeftSize] = useState(0);
+
+  useEffect(() => {
+    const leftSize = (): void => {
+      const sizing = (window.innerWidth - 1400) / 2;
+
+      if (sizing > 0) setLeftSize(sizing);
+    };
+    window.addEventListener('resize', leftSize);
+    leftSize();
+    return () => window.removeEventListener('resize', leftSize);
+  }, []);
+
   const icons = [
     {
       icon: <GitHubIcon fontSize="large" />,
@@ -33,7 +46,7 @@ const IconContact: React.FC<IconContactProps> = ({ zIndex }) => {
           xs: 'translate(-100%, 0%)',
           md: 'translate(0%, 50%)',
         },
-        left: { md: 0, xs: '100%' },
+        left: { md: leftSize, xs: '100%' },
         bottom: { xs: 0, md: '50%' },
         p: 1,
         zIndex: zIndex - 2,

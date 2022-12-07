@@ -10,7 +10,7 @@ interface NavbarProps {
   children: React.ReactNode;
 }
 
-export const navHeight = 56;
+export const navHeight = 64;
 
 const Navbar: React.FC<NavbarProps> = ({ children }) => {
   const { t } = useTranslation('common');
@@ -23,12 +23,8 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
       navigate: '/',
     },
     {
-      title: t('header.home'),
-      navigate: '/',
-    },
-    {
-      title: t('header.home'),
-      navigate: '/',
+      title: t('header.project'),
+      navigate: '/project',
     },
   ];
 

@@ -8,13 +8,12 @@ import { useTranslation } from 'react-i18next';
 export const getStaticProps = async ({ locale }: { locale: string }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale, ['common', 'homepage'])),
     },
   };
 };
 
 const Index = () => {
-  const { t } = useTranslation('common');
   return (
     <Box>
       <HeadSection />

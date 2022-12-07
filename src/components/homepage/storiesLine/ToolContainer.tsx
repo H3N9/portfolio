@@ -10,20 +10,15 @@ interface ToolObject {
 
 interface ToolContainerProps {
   tools: Array<ToolObject>;
-  title: string;
 }
 
-const ToolContainer: React.FC<ToolContainerProps> = ({ tools, title }) => {
+const ToolContainer: React.FC<ToolContainerProps> = ({ tools }) => {
   return (
     <Box width="100%">
-      <Typography variant="h6" pb={2}>
-        {title}
-      </Typography>
       <Box
         sx={{
           display: 'flex',
           flexWrap: 'wrap',
-          justifyContent: 'space-around',
         }}
       >
         {tools.map((image, index) => (

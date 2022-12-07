@@ -1,7 +1,7 @@
 {
   "header": {
     "home": "HOME",
-    "about-me": "ABOUT ME",
-    "contact": "CONTACT"
+    "project": "PROJECT",
+    "resume": "Resume"
   }
 }

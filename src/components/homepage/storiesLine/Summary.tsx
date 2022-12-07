@@ -1,5 +1,6 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Typography, Button } from '@mui/material';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface SummaryProps {
   container: React.RefObject<HTMLElement>;
@@ -7,6 +8,7 @@ interface SummaryProps {
 }
 
 const Summary: React.FC<SummaryProps> = ({ container, textFading }) => {
+  const { t } = useTranslation('homepage');
   return (
     <Box
       sx={{
@@ -30,13 +32,14 @@ const Summary: React.FC<SummaryProps> = ({ container, textFading }) => {
             alignItems: 'center',
             flexDirection: 'column',
             display: 'flex',
+            whiteSpace: 'nowrap',
           }}
         >
           <Typography align="center" sx={{ fontSize: { xs: 24, sm: 60 } }}>
-            dsadas
+            {t('conclusion.title')}
           </Typography>
-          <Typography align="center" sx={{ fontSize: { xs: 24, md: 60 } }}>
-            dsadas
+          <Typography align="center" sx={{ fontSize: { xs: 20, md: 48 } }}>
+            {t('conclusion.persuade')}
           </Typography>
           <Box
             display="flex"
@@ -46,7 +49,9 @@ const Summary: React.FC<SummaryProps> = ({ container, textFading }) => {
               pt: 4,
             }}
           >
-            <Typography>dasda</Typography>
+            <Button variant="text" color="secondary">
+              {t('conclusion.see-more-project')}
+            </Button>
           </Box>
         </Box>
       </Container>

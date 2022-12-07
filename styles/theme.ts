@@ -25,19 +25,19 @@ const theme = createTheme({
   typography: {
     fontFamily: 'Ubuntu',
     h1: {
-      fontWeight: 400,
+      fontWeight: 700,
       fontSize: 96,
     },
     h2: {
-      fontWeight: 400,
+      fontWeight: 700,
       fontSize: 60,
     },
     h3: {
-      fontWeight: 400,
+      fontWeight: 600,
       fontSize: 48,
     },
     h4: {
-      fontWeight: 400,
+      fontWeight: 600,
       fontSize: 34,
     },
     h5: {
@@ -78,6 +78,17 @@ const theme = createTheme({
     MuiButton: {
       defaultProps: {
         variant: 'contained',
+      },
+      styleOverrides: {
+        outlined: {
+          borderWidth: 3,
+          '&:hover': {
+            borderWidth: 3,
+          },
+        },
+        root: {
+          textTransform: 'capitalize',
+        },
       },
     },
   },
