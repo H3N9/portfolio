@@ -14,6 +14,7 @@ const BoxLeft = styled(Box)({
 
 interface ContentSectionProps {
   deviceContainer: React.RefObject<HTMLElement>;
+  toolContainer: React.RefObject<HTMLElement>;
 }
 interface TittleHeadProps {
   title: string;
@@ -23,7 +24,10 @@ interface DescriptTextProps {
   description: string;
 }
 
-const ContentSection: React.FC<ContentSectionProps> = ({ deviceContainer }) => {
+const ContentSection: React.FC<ContentSectionProps> = ({
+  deviceContainer,
+  toolContainer,
+}) => {
   const { t } = useTranslation('homepage');
   return (
     <>
@@ -38,7 +42,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ deviceContainer }) => {
             <DescriptText description={t('experiences.card-2.description')} />
           </Grid>
           <Grid item md={12} sx={{ display: 'flex', alignItems: 'flex-end' }}>
-            <DevicesPack />
+            <DevicesPack deviceContainer={deviceContainer} />
           </Grid>
         </Grid>
       </BoxLeft>
@@ -49,7 +53,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ deviceContainer }) => {
             <DescriptText description={t('expertise.description')} />
           </Grid>
           <Grid item xs={12} md={6}>
-            <ToolContainer tools={toolIcons} />
+            <ToolContainer tools={toolIcons} toolContainer={toolContainer} />
           </Grid>
         </Grid>
       </BoxLeft>

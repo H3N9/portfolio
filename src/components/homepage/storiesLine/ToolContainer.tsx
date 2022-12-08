@@ -10,9 +10,13 @@ interface ToolObject {
 
 interface ToolContainerProps {
   tools: Array<ToolObject>;
+  toolContainer: React.RefObject<HTMLElement>;
 }
 
-const ToolContainer: React.FC<ToolContainerProps> = ({ tools }) => {
+const ToolContainer: React.FC<ToolContainerProps> = ({
+  tools,
+  toolContainer,
+}) => {
   return (
     <Box width="100%">
       <Box
@@ -20,6 +24,7 @@ const ToolContainer: React.FC<ToolContainerProps> = ({ tools }) => {
           display: 'flex',
           flexWrap: 'wrap',
         }}
+        ref={toolContainer}
       >
         {tools.map((image, index) => (
           <IconCard
@@ -27,6 +32,7 @@ const ToolContainer: React.FC<ToolContainerProps> = ({ tools }) => {
             alt={image.alt}
             key={index}
             title={image.title}
+            length={index}
           />
         ))}
       </Box>

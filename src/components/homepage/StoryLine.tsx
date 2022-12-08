@@ -4,8 +4,6 @@ import { Container, Grid, styled, Typography } from '@mui/material';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import ToolContainer from './storiesLine/ToolContainer';
-import { programmingIcons } from '@utills/iconsStory';
 import Summary from './storiesLine/Summary';
 import TitleSection from './sections/TitleSection';
 import ContentSection from './sections/ContentSection';
@@ -28,6 +26,8 @@ const StoryLine: React.FC<StoryLineProps> = () => {
   const summaryMask = useRef<HTMLElement>(null);
   const containerSummary = useRef<HTMLElement>(null);
   const containerTextSummary = useRef<HTMLElement>(null);
+  const deviecesContainer = useRef<HTMLElement>(null);
+  const toolContainer = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const windowHeight = window.innerHeight * scaleHeight;
@@ -98,6 +98,30 @@ const StoryLine: React.FC<StoryLineProps> = () => {
         .from(allContentContainer[index]?.lastChild, {
           opacity: 0,
           yPercent: 10,
+        });
+      if (index === 1)
+        timeline.to(
+          [deviecesContainer.current, deviecesContainer.current?.children],
+          {
+            stagger: {
+              each: 0.1,
+              from: 'start',
+              ease: 'back.in',
+            },
+            yPercent: 5,
+            opacity: 1,
+          }
+        );
+      if (index === allContentMask.length - 1)
+        timeline.to([toolContainer.current, toolContainer.current?.children], {
+          opacity: 1,
+          yoyo: true,
+          stagger: {
+            each: 0.1,
+            from: 'center',
+            axis: 'y',
+            grid: [2, 4],
+          },
         });
       ScrollTrigger.create({
         trigger: element,
@@ -245,10 +269,14 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                   pl: 3,
                   position: 'relative',
                   width: '100%',
+                  overflow: 'hidden',
                 }}
                 ref={contentContainer}
               >
-                <ContentSection />
+                <ContentSection
+                  deviceContainer={deviecesContainer}
+                  toolContainer={toolContainer}
+                />
               </Box>
             </Box>
           </Box>

@@ -4,6 +4,15 @@ const primary = '#1A1A1A';
 const secondary = '#F5F5F5';
 
 const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
   palette: {
     primary: {
       main: primary,
@@ -70,7 +79,7 @@ const theme = createTheme({
     },
     button: {
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 600,
     },
   },
   components: {

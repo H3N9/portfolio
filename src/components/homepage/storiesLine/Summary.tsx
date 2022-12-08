@@ -35,7 +35,7 @@ const Summary: React.FC<SummaryProps> = ({ container, textFading }) => {
             whiteSpace: 'nowrap',
           }}
         >
-          <Typography align="center" sx={{ fontSize: { xs: 24, sm: 60 } }}>
+          <Typography align="center" sx={{ fontSize: { xs: 24, md: 60 } }}>
             {t('conclusion.title')}
           </Typography>
           <Typography align="center" sx={{ fontSize: { xs: 20, md: 48 } }}>
