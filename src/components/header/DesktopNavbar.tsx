@@ -5,6 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import EmailIcon from '@mui/icons-material/Email';
 import { emailUtil } from '@utills/utills';
+import BtnLang from './BtnLang';
 
 interface LinkObject {
   title: string;
@@ -12,11 +13,14 @@ interface LinkObject {
 }
 
 type HandleOpenDrawer = () => void;
+type HandleChangeLang = (lang: string) => void;
 
 interface DesktopNavbarProps {
   menu: Array<LinkObject>;
   handleOpenDrawer: HandleOpenDrawer;
   openDrawer: boolean;
+  langState: string;
+  handleChangeLang: HandleChangeLang;
 }
 
 interface NavLinkProps {
@@ -28,6 +32,8 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
   menu,
   handleOpenDrawer,
   openDrawer,
+  langState,
+  handleChangeLang,
 }) => {
   return (
     <Box
@@ -74,6 +80,15 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
         {menu.map((each, index) => (
           <NavLink key={index} title={each.title} navigate={each.navigate} />
         ))}
+        <Box
+          sx={{
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          <BtnLang langState={langState} handleChangeLang={handleChangeLang} />
+        </Box>
       </Box>
       <IconButton
         sx={{ display: { md: 'none', xs: 'flex' } }}

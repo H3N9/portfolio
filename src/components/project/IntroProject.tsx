@@ -7,7 +7,13 @@ interface IntroProjectProps {}
 
 const IntroProject: React.FC<IntroProjectProps> = () => {
   return (
-    <Box sx={{ width: '100%', height: `calc(100vh - ${navHeight}px)` }}>
+    <Box
+      sx={{
+        width: '100%',
+        height: `calc(100vh - ${navHeight}px)`,
+        py: 2,
+      }}
+    >
       <Container sx={{ height: '100%' }}>
         <Grid container sx={{ height: '100%' }}>
           <Grid
@@ -22,7 +28,7 @@ const IntroProject: React.FC<IntroProjectProps> = () => {
           >
             <Typography
               sx={{
-                fontSize: 128,
+                fontSize: { md: 128, xs: 32 },
                 fontWeight: 700,
                 lineHeight: 1,
               }}

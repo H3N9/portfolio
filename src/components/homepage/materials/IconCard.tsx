@@ -16,9 +16,23 @@ const IconCard: React.FC<IconCardProps> = ({ image, alt, title }) => {
         flexDirection: 'column',
         alignItems: 'center',
         pl: 4,
+        pb: 4,
       }}
     >
-      <Image width={60} height={60} src={image} alt={alt} />
+      <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+        <Image width={60} height={60} src={image} alt={alt} />
+      </Box>
+      <Box
+        sx={{
+          display: { xs: 'flex', md: 'none' },
+          px: 1,
+          bgcolor: 'primary.main',
+          color: 'secondary.main',
+          borderRadius: '4px',
+        }}
+      >
+        <Typography>{title}</Typography>
+      </Box>
     </Box>
   );
 };

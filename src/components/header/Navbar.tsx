@@ -1,7 +1,9 @@
 import { AppBar, Box, Container, Typography, useTheme } from '@mui/material';
 import Cursor from '@ui/Cursor';
 import IconContact from '@ui/IconContact';
-import React, { useState } from 'react';
+import { baseLang, initLang, setLang } from '@utills/langUtill';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import DesktopNavbar from './DesktopNavbar';
 import MobileNavbar from './MobileNavbar';
@@ -16,6 +18,19 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
   const { t } = useTranslation('common');
   const [openDrawer, setOpenDrawer] = useState(false);
   const theme = useTheme();
+  const router = useRouter();
+  const [langState, setLangState] = useState(router.locale ?? baseLang.en);
+
+  useEffect(() => {
+    initLang(router);
+    setLangState(router.locale ?? baseLang.en);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleChangeLang = (newLang: string) => {
+    setLang(newLang, router);
+    setLangState(newLang);
+  };
 
   const menu = [
     {
@@ -46,6 +61,8 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
             menu={menu}
             handleOpenDrawer={handleDrawer}
             openDrawer={openDrawer}
+            langState={langState}
+            handleChangeLang={handleChangeLang}
           />
           <MobileNavbar
             zIndex={theme.zIndex.appBar}
@@ -53,6 +70,8 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
             handleOpenDrawer={handleDrawer}
             menu={menu}
             spacing={navHeight}
+            langState={langState}
+            handleChangeLang={handleChangeLang}
           />
         </Container>
       </AppBar>

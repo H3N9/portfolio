@@ -1,4 +1,5 @@
-import { Box, Button, Drawer, Typography } from '@mui/material';
+import { Box, Button, Drawer, Typography, Divider } from '@mui/material';
+import { baseLang } from '@utills/langUtill';
 import Link from 'next/link';
 import React from 'react';
 
@@ -8,6 +9,7 @@ interface LinkObject {
 }
 
 type HandleOpenDrawer = () => void;
+type HandleChangeLang = (lang: string) => void;
 
 interface MobileNavbarProps {
   menu: Array<LinkObject>;
@@ -15,6 +17,8 @@ interface MobileNavbarProps {
   zIndex: number;
   openDrawer: boolean;
   handleOpenDrawer: HandleOpenDrawer;
+  langState: string;
+  handleChangeLang: HandleChangeLang;
 }
 
 interface MenuDrawer {
@@ -30,7 +34,14 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
   zIndex,
   handleOpenDrawer,
   openDrawer,
+  handleChangeLang,
+  langState,
 }) => {
+  const handleSwitchLang = (newLang: string) => {
+    handleChangeLang(newLang);
+    handleOpenDrawer();
+  };
+
   return (
     <Drawer
       open={openDrawer}
@@ -60,6 +71,27 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
         <Button variant="outlined" sx={{ width: 170, mt: 4 }} size="large">
           RESUME
         </Button>
+        <Box display="flex" justifyContent="center" p={2}>
+          <Button
+            variant="text"
+            size="small"
+            sx={{ color: 'black.light' }}
+            onClick={() => handleSwitchLang(baseLang.th)}
+            disabled={baseLang.th === langState}
+          >
+            ไทย
+          </Button>
+          <Divider orientation="vertical" flexItem />
+          <Button
+            variant="text"
+            size="small"
+            sx={{ color: 'black.light' }}
+            onClick={() => handleSwitchLang(baseLang.en)}
+            disabled={baseLang.en === langState}
+          >
+            EN
+          </Button>
+        </Box>
       </Box>
     </Drawer>
   );

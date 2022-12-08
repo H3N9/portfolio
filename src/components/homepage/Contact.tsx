@@ -24,7 +24,6 @@ const Contact: React.FC<ContactProps> = () => {
         markers: true,
         start: '+=20% center',
         animation: tl,
-        toggleActions: 'play reverse play reverse',
       });
     });
     return () => animation.clear();
