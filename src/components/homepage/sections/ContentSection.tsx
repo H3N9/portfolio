@@ -1,11 +1,12 @@
 import React from 'react';
 import { Grid, Typography, styled, Box } from '@mui/material';
-import ToolContainer from '../storiesLine/ToolContainer';
 import { toolIcons } from '@utills/iconsStory';
 import { useTranslation } from 'react-i18next';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { devicesImage } from '@utills/utills';
-import DevicesPack from '../materials/DevicesPack';
+
+const DevicesPack = dynamic(() => import('../materials/DevicesPack'));
+const ToolContainer = dynamic(() => import('../storiesLine/ToolContainer'));
 
 const BoxLeft = styled(Box)({
   position: 'absolute',
@@ -33,7 +34,29 @@ const ContentSection: React.FC<ContentSectionProps> = ({
     <>
       <BoxLeft>
         <TitleHead title={t('experiences.card-1.title')} />
-        <DescriptText description={t('experiences.card-1.description')} />
+
+        <Grid container sx={{ maxHeight: '90%', height: 1 }} spacing={2}>
+          <Grid item xs={12}>
+            <DescriptText description={t('experiences.card-1.description')} />
+          </Grid>
+          <Grid
+            item
+            md={12}
+            sx={{
+              display: 'flex',
+              alignItems: 'flex-end',
+              position: 'relative',
+              justifyContent: 'center',
+            }}
+          >
+            <Image
+              src={'/static/images/homepage/progress.png'}
+              alt="progress"
+              width={400}
+              height={300}
+            />
+          </Grid>
+        </Grid>
       </BoxLeft>
       <BoxLeft>
         <TitleHead title={t('experiences.card-2.title')} />

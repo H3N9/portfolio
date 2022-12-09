@@ -5,6 +5,13 @@ export const emailUtil = {
   send: `https://mail.google.com/mail/?view=cm&source=mailto&to=${email}`,
 };
 
+export const handleOpenEmail = () => {
+  window.open(emailUtil.send);
+};
+export const handleOpenResume = () => {
+  window.open(`/static/pdf/resume.pdf`);
+};
+
 const pathDevices = '/static/images/homepage/devices/';
 
 export const devicesImage = {

@@ -1,4 +1,5 @@
 import { Box, Container, Typography, Button } from '@mui/material';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -9,6 +10,7 @@ interface SummaryProps {
 
 const Summary: React.FC<SummaryProps> = ({ container, textFading }) => {
   const { t } = useTranslation('homepage');
+  const router = useRouter();
   return (
     <Box
       sx={{
@@ -19,6 +21,7 @@ const Summary: React.FC<SummaryProps> = ({ container, textFading }) => {
         position: 'absolute',
         overflow: 'hidden',
         zIndex: 3,
+        opacity: 0,
       }}
       ref={container}
     >
@@ -49,7 +52,11 @@ const Summary: React.FC<SummaryProps> = ({ container, textFading }) => {
               pt: 4,
             }}
           >
-            <Button variant="text" color="secondary">
+            <Button
+              onClick={() => router.push('/project')}
+              variant="text"
+              color="secondary"
+            >
               {t('conclusion.see-more-project')}
             </Button>
           </Box>

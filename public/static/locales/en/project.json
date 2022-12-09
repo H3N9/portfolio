@@ -1,0 +1,65 @@
+{
+  "title": "My Project",
+  "show-case": {
+    "title": "PenPals App",
+    "role": "Full Stack",
+    "viewing": "View Project",
+    "description": "PenPals is Mobile application, it was built by React Native. PenPals has idea as Interpal or Facebook that we can chat with friend, post activites, notification and friend social. but the difference of PenPals is the tags, Tags are a personal preference identicator in order to made relationship each other."
+  },
+  "projects": {
+    "title": "Some things i've built",
+    "list": {
+      "0": {
+        "title": "All Express",
+        "role": "Frontend",
+        "description": "All Express is platform as a service. The business is Multi level marketing. All Express is store for delivery parcel via various couriers. I work with multiple team for delivery to product owner.",
+        "stack": {
+          "0": "Nextjs",
+          "1": "Mui"
+        }
+      },
+      "1": {
+        "title": "SpaceX",
+        "role": "Frontend",
+        "description": "SpaceX is a project that build by React and fetching SpaceX APIs. It was built for studying",
+        "stack": {
+          "0": "React"
+        }
+      },
+      "2": {
+        "title": "World War I and II",
+        "role": "Frontend",
+        "description": "World War I and II is a project for awareness of war, providing knowledge and sequence of events in the war. This project was built for education.",
+        "stack": {
+          "0": "HTML",
+          "1": "CSS",
+          "2": "JS"
+        }
+      },
+      "3": {
+        "title": "Tank",
+        "role": "Developer",
+        "description": "Tank is a game that contain mechanic same as reality tank. Tank is a single player game and fighting with bot. you can rotate turret for shooting weak spot of tank such as behind or side but front side has huge armor that you mightn't be able penetrate.",
+        "stack": {
+          "0": "JAVA"
+        }
+      },
+      "4": {
+        "title": "Religion",
+        "role": "Frontend",
+        "description": "About game. you are knight in game and change who is religion to be faith the queen by hurt them. that sound is not glad but you will know this game have a choice. you just have to play to good ending.",
+        "stack": {
+          "0": "JS"
+        }
+      },
+      "5": {
+        "title": "Snake",
+        "role": "Frontend",
+        "description": "Keep going and eat the apple for grow up",
+        "stack": {
+          "0": "JS"
+        }
+      }
+    }
+  }
+}

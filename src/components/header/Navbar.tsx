@@ -1,12 +1,16 @@
-import { AppBar, Box, Container, Typography, useTheme } from '@mui/material';
+import { AppBar, Box, Container, useTheme } from '@mui/material';
 import Cursor from '@ui/Cursor';
 import IconContact from '@ui/IconContact';
 import { baseLang, initLang, setLang } from '@utills/langUtill';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import DesktopNavbar from './DesktopNavbar';
-import MobileNavbar from './MobileNavbar';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import dynamic from 'next/dynamic';
+
+const DesktopNavbar = dynamic(() => import('./DesktopNavbar'));
+const MobileNavbar = dynamic(() => import('./MobileNavbar'));
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -20,6 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
   const theme = useTheme();
   const router = useRouter();
   const [langState, setLangState] = useState(router.locale ?? baseLang.en);
+  const appBar = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     initLang(router);
@@ -31,6 +36,22 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
     setLang(newLang, router);
     setLangState(newLang);
   };
+
+  useEffect(() => {
+    const hideNavbar = gsap
+      .from(appBar.current, {
+        yPercent: -100,
+        duration: 0.3,
+      })
+      .progress(1);
+    ScrollTrigger.create({
+      start: 'top top',
+      end: `+=${document.body.offsetHeight}`,
+      onUpdate: (self) => {
+        self.direction === -1 ? hideNavbar.play() : hideNavbar.reverse();
+      },
+    });
+  }, []);
 
   const menu = [
     {
@@ -50,10 +71,12 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
   return (
     <Box>
       <AppBar
+        ref={appBar}
         sx={{
           maxHeight: navHeight,
           height: '100%',
           boxShadow: 0,
+          bgcolor: 'primary.main',
         }}
       >
         <Container sx={{ height: '100%' }}>
@@ -75,7 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
           />
         </Container>
       </AppBar>
-      <Box sx={{ height: navHeight }} />
+
       <Box
         sx={{
           bgcolor: 'primary.main',

@@ -1,8 +1,9 @@
-import { Box, Button, Container, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useTranslation } from 'react-i18next';
+import { handleOpenEmail, handleOpenResume } from '@utills/utills';
 
 interface ContactProps {}
 
@@ -21,7 +22,7 @@ const Contact: React.FC<ContactProps> = () => {
       });
       ScrollTrigger.create({
         trigger: container.current,
-        markers: true,
+
         start: '+=20% center',
         animation: tl,
       });
@@ -87,11 +88,21 @@ const Contact: React.FC<ContactProps> = () => {
             </Typography>
             <Typography>{t('contact.description')}</Typography>
             <Box sx={{ display: 'flex', py: 3 }}>
-              <Button variant="outlined" color="secondary" sx={{ width: 150 }}>
+              <Button
+                variant="outlined"
+                color="secondary"
+                onClick={handleOpenEmail}
+                sx={{ width: 150 }}
+              >
                 {t('contact.send-email')}
               </Button>
               <Box p={1} />
-              <Button variant="outlined" color="secondary" sx={{ width: 150 }}>
+              <Button
+                onClick={handleOpenResume}
+                variant="outlined"
+                color="secondary"
+                sx={{ width: 150 }}
+              >
                 {t('contact.resume')}
               </Button>
             </Box>

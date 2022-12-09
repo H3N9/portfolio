@@ -4,16 +4,11 @@ import { Box } from '@mui/material';
 import Image from 'next/image';
 import { devicesImage } from '@utills/utills';
 
-interface DevicesPackProps {
-  deviceContainer: React.RefObject<HTMLElement>;
-}
+interface DevicesPackProps {}
 
-const DevicesPack: React.FC<DevicesPackProps> = ({ deviceContainer }) => {
+const DevicesPack: React.FC<DevicesPackProps> = ({}) => {
   return (
-    <Box
-      sx={{ position: 'relative', width: '100%', height: '100%' }}
-      ref={deviceContainer}
-    >
+    <>
       <Box
         sx={{
           position: 'absolute',
@@ -34,7 +29,7 @@ const DevicesPack: React.FC<DevicesPackProps> = ({ deviceContainer }) => {
       <Box sx={{ position: 'absolute', left: '70%', bottom: 0, opacity: 0 }}>
         <Image {...devicesImage.tablet} />
       </Box>
-    </Box>
+    </>
   );
 };
 
