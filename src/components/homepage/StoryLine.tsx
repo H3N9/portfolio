@@ -19,10 +19,6 @@ const BoxLeft = styled(Box)({
   height: '100%',
 });
 
-interface ContentSectionProps {
-  deviceContainer: React.RefObject<HTMLElement>;
-  toolContainer: React.RefObject<HTMLElement>;
-}
 interface TittleHeadProps {
   title: string;
 }

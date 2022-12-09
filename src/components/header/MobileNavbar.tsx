@@ -2,7 +2,7 @@ import { Box, Button, Drawer, Typography, Divider } from '@mui/material';
 import { baseLang } from '@utills/langUtill';
 import { handleOpenResume } from '@utills/utills';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 interface LinkObject {
   title: string;

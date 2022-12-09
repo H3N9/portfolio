@@ -1,9 +1,10 @@
-import Contact from '@components/homepage/Contact';
-import HeadSection from '@components/homepage/sections/HeadSection';
-import StoryLine from '@components/homepage/StoryLine';
-import { Box } from '@mui/material';
+import Loader from '@components/homepage/Loader';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'react-i18next';
+import dynamic from 'next/dynamic';
+import HeadSection from '@components/homepage/sections/HeadSection';
+
+const StoryLine = dynamic(() => import('@components/homepage/StoryLine'));
+const Contact = dynamic(() => import('@components/homepage/Contact'));
 
 export const getStaticProps = async ({ locale }: { locale: string }) => {
   return {
@@ -15,11 +16,11 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
 
 const Index = () => {
   return (
-    <Box>
+    <>
       <HeadSection />
       <StoryLine />
       <Contact />
-    </Box>
+    </>
   );
 };
 
