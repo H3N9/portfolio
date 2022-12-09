@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
 
 const DesktopNavbar = dynamic(() => import('./DesktopNavbar'));
 const MobileNavbar = dynamic(() => import('./MobileNavbar'));
@@ -70,6 +71,9 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
 
   return (
     <Box>
+      <Head>
+        <title>Ramil Arthan</title>
+      </Head>
       <AppBar
         ref={appBar}
         sx={{
