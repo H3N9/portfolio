@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import EmailIcon from '@mui/icons-material/Email';
+import FacebookIcon from '@mui/icons-material/Facebook';
 import { Box, IconButton } from '@mui/material';
 
 interface IconContactProps {
@@ -26,14 +26,18 @@ const IconContact: React.FC<IconContactProps> = ({ zIndex }) => {
     {
       icon: <GitHubIcon fontSize="large" />,
       alt: 'github-icons',
+      action: () => window.open('https://github.com/H3N9'),
     },
     {
       icon: <LinkedInIcon fontSize="large" />,
       alt: 'linkedin-icons',
+      action: () =>
+        window.open('https://www.linkedin.com/in/ramil-arthan-397349170/'),
     },
     {
-      icon: <EmailIcon fontSize="large" />,
+      icon: <FacebookIcon fontSize="large" />,
       alt: 'email-icons',
+      action: () => window.open('https://www.facebook.com/ramilh3n9'),
     },
   ];
   return (
@@ -54,7 +58,12 @@ const IconContact: React.FC<IconContactProps> = ({ zIndex }) => {
       }}
     >
       {icons.map((each, index) => (
-        <IconButton key={index} aria-label={each.alt} sx={{ color: 'white' }}>
+        <IconButton
+          onClick={each.action}
+          key={index}
+          aria-label={each.alt}
+          sx={{ color: 'white' }}
+        >
           {each.icon}
         </IconButton>
       ))}

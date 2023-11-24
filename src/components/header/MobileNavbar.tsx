@@ -1,7 +1,8 @@
 import { Box, Button, Drawer, Typography, Divider } from '@mui/material';
 import { baseLang } from '@utills/langUtill';
+import { handleOpenResume } from '@utills/utills';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 interface LinkObject {
   title: string;
@@ -68,7 +69,12 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
             handleOpenDrawer={handleOpenDrawer}
           />
         ))}
-        <Button variant="outlined" sx={{ width: 170, mt: 4 }} size="large">
+        <Button
+          onClick={handleOpenResume}
+          variant="outlined"
+          sx={{ width: 170, mt: 4 }}
+          size="large"
+        >
           RESUME
         </Button>
         <Box display="flex" justifyContent="center" p={2}>

@@ -1,8 +1,8 @@
-import { navHeight } from '@components/header/Navbar';
 import { Box, Container, Typography, useTheme } from '@mui/material';
 import gsap, { SteppedEase } from 'gsap';
 import React, { useEffect, useRef } from 'react';
 import { TextPlugin } from 'gsap/dist/TextPlugin';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 interface HeadSectionProps {}
 
@@ -10,14 +10,15 @@ const HeadSection: React.FC<HeadSectionProps> = () => {
   const mainText = useRef<HTMLHeadElement>(null);
   const secondaryText = useRef<HTMLHeadElement>(null);
   const cursorTyping = useRef<HTMLHeadElement>(null);
+  const mouseScroll = useRef<HTMLElement>(null);
   const namingText = 'RAMIL ARTHAN';
-  const theme = useTheme();
 
   useEffect(() => {
     const contextAnimation = gsap.context(() => {
       gsap.registerPlugin(TextPlugin);
       const typingAnimate = gsap.timeline();
       const cursorAnimate = gsap.timeline();
+      const mouseScrollChild = mouseScroll.current?.firstChild;
       typingAnimate
         .to(mainText.current, {
           delay: 1,
@@ -37,6 +38,12 @@ const HeadSection: React.FC<HeadSectionProps> = () => {
         },
         { autoAlpha: 1, repeat: -1, ease: SteppedEase.config(1) }
       );
+      gsap.to(mouseScrollChild || [], {
+        y: 10,
+        repeat: -1,
+        duration: 1,
+        yoyo: true,
+      });
     });
     return () => contextAnimation.clear();
   }, []);
@@ -44,9 +51,10 @@ const HeadSection: React.FC<HeadSectionProps> = () => {
   return (
     <Box
       sx={{
-        height: `calc(100vh - ${navHeight}px)`,
+        height: '100vh',
         width: '100vw',
         bgcolor: 'primary.main',
+        position: 'relative',
       }}
     >
       <Container
@@ -93,6 +101,25 @@ const HeadSection: React.FC<HeadSectionProps> = () => {
           </Typography>
         </Box>
       </Container>
+      <Box
+        ref={mouseScroll}
+        sx={{
+          width: 40,
+          height: 75,
+          borderWidth: 5,
+          borderStyle: 'solid',
+          borderColor: 'secondary.main',
+          position: 'absolute',
+          bottom: '10%',
+          borderRadius: 10,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <KeyboardArrowDownIcon />
+      </Box>
     </Box>
   );
 };

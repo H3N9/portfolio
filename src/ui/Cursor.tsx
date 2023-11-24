@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Box, useTheme } from '@mui/material';
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
@@ -11,11 +12,14 @@ const Cursor: React.FC<CursorProps> = () => {
 
   const handleCursor = (event: MouseEvent) => {
     const { clientX, clientY } = event;
-    gsap.to(cursorRef.current, {
-      top: clientY - space,
-      left: clientX - space,
-      width: 25,
-      height: 25,
+    const mediaMatch = gsap.matchMedia();
+    mediaMatch.add(`(min-width: ${theme.breakpoints.values.md}px)`, () => {
+      gsap.to(cursorRef.current, {
+        top: clientY - space,
+        left: clientX - space,
+        width: 25,
+        height: 25,
+      });
     });
   };
 
@@ -34,6 +38,7 @@ const Cursor: React.FC<CursorProps> = () => {
       document.body.removeEventListener('mouseleave', handleLeavingCoursor);
     };
   }, []);
+
   return (
     <Box
       ref={cursorRef}

@@ -2,15 +2,39 @@ import { Box, IconButton, Typography } from '@mui/material';
 import React from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import Image from 'next/image';
+
+interface ReachObject {
+  github?: string;
+  link?: string;
+}
 
 interface ProjectCardDesktopProps {
   reverse: boolean;
+  role: string;
+  title: string;
+  description: string;
+  reach: ReachObject;
+  stack: Array<string>;
+  image: string;
 }
 interface TagToolProps {
   tag: string;
 }
 
-const ProjectCardDesktop: React.FC<ProjectCardDesktopProps> = ({ reverse }) => {
+const ProjectCardDesktop: React.FC<ProjectCardDesktopProps> = ({
+  reverse,
+  title,
+  role,
+  description,
+  reach,
+  stack,
+  image,
+}) => {
+  const handleOpenLink = (link: string | undefined) => {
+    window.open(link);
+  };
+
   return (
     <Box
       sx={{
@@ -21,14 +45,21 @@ const ProjectCardDesktop: React.FC<ProjectCardDesktopProps> = ({ reverse }) => {
         mb: 12.5,
       }}
     >
-      <Box sx={{ width: '50%' }}>
-        <Box
-          sx={{
-            width: '100%',
-            height: 400,
-            bgcolor: 'red',
-          }}
-        />
+      <Box
+        sx={{
+          width: '50%',
+          height: 400,
+          position: 'relative',
+          borderRadius: '5px',
+          overflow: 'hidden',
+          opacity: 0.5,
+          transition: '0.5s',
+          '&:hover': {
+            opacity: 1,
+          },
+        }}
+      >
+        <Image src={image} layout="fill" alt={title} />
       </Box>
       <Box
         sx={{
@@ -41,9 +72,9 @@ const ProjectCardDesktop: React.FC<ProjectCardDesktopProps> = ({ reverse }) => {
           zIndex: 2,
         }}
       >
-        <Typography>dsadsa</Typography>
+        <Typography>{role}</Typography>
         <Typography variant="h4" pb={1}>
-          Project
+          {title}
         </Typography>
         <Box
           sx={{
@@ -54,25 +85,30 @@ const ProjectCardDesktop: React.FC<ProjectCardDesktopProps> = ({ reverse }) => {
             width: '120%',
           }}
         >
-          <Typography variant="h6">
-            Lorem ipsum dolor sit amet consectetur. Suspendisse lobortis tempus
-            tristique lobortis. Pellentesque sed a diam mauris sed malesuada
-            nulla. Tellus pulvinar tincidunt dolor iaculis tempus adipiscing
-            quis. Tempus facilisi sagittis sem
-          </Typography>
+          <Typography variant="h6">{description}</Typography>
         </Box>
         <Box display="flex">
-          {Array.from({ length: 3 }, (_, i) => (
-            <TagTool tag={'HTML'} key={i} />
+          {stack.map((each, index) => (
+            <TagTool tag={each} key={index} />
           ))}
         </Box>
         <Box>
-          <IconButton aria-label="github">
-            <GitHubIcon color="secondary" />
-          </IconButton>
-          <IconButton aria-label="open new tab">
-            <OpenInNewIcon color="secondary" />
-          </IconButton>
+          {reach?.github && (
+            <IconButton
+              onClick={() => handleOpenLink(reach?.github)}
+              aria-label="github"
+            >
+              <GitHubIcon color="secondary" />
+            </IconButton>
+          )}
+          {reach.link && (
+            <IconButton
+              onClick={() => handleOpenLink(reach?.link)}
+              aria-label="open new tab"
+            >
+              <OpenInNewIcon color="secondary" />
+            </IconButton>
+          )}
         </Box>
       </Box>
     </Box>
@@ -82,7 +118,7 @@ const ProjectCardDesktop: React.FC<ProjectCardDesktopProps> = ({ reverse }) => {
 const TagTool: React.FC<TagToolProps> = ({ tag }) => {
   return (
     <Box sx={{ p: 1 }}>
-      <Typography fontFamily="Roboto">{tag}</Typography>
+      <Typography>{tag}</Typography>
     </Box>
   );
 };
