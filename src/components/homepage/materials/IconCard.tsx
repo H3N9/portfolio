@@ -15,13 +15,12 @@ const IconCard: React.FC<IconCardProps> = ({ image, alt, title, length }) => {
   return (
     <Box
       sx={{
-        display: 'flex',
+        display: isMdDown && length > 10 ? 'none' : 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         pl: 4,
         pb: 4,
         opacity: 0,
-        display: isMdDown && length > 10 ? 'none' : 'flex',
       }}
     >
       <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
