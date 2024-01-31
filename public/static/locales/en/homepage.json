@@ -8,20 +8,24 @@
   },
   "content": {
     "title-1": "Experiences",
-    "title-2": "Expertises"
+    "title-2": "Expertise"
   },
   "experiences": {
     "card-1": {
-      "title": "Shippop (Part-time) Jan 2022 - Present",
-      "description": "This product is on development. I have role in Frontend developer. we work as Scrum, gathering requirement from PO, development in Next Js and build API Gateway via Nextjs, using version control of Azure DevOps and building CI/CD that contain Automate testing by Cypress and setting Infrastacture."
+      "title": "Fuchsia (Full time) มี.ค. 2023 - ปัจจุบัน",
+      "description": "โครงการ GISX เป็นโครงการระบบประกันกลุ่มหลักของภายในบริษัท ตัวโครงการนี้อยู่ในขั้นตอนการผลิต ซึ่งฉันได้มีบทบาทในการทำส่วนหน้าบ้าน (Frontend) ในการผลิต ตัวโครงการมีมูลค่ามากกว่า 500 ล้านบาทและฉันได้เป็นส่วนหนึ่งในการพัฒนา โครงการจัดทำขึ้นเพื่อแก้ปัญหาและปรับเปลี่ยนระบบเก่ามาเป็นระบบใหม่ ผมได้มีส่วนในการวางโครงสร้างพื่นฐานของระบบและนำทีมในการทำ Feature หลักของระบบ เป็นที่ปรึกษาสำหรับภาคธุรกิจข้อจำกัดหรือ Trade off ของระบบให้ suggestion กับฝ่ายธุรกิจ และให้คำปรึกษาในการทำงานเชิงระบบรวมไปถึงการ Review code implementation"
     },
     "card-2": {
-      "title": "Shippop (Coperation Eudacation) Aug 2021 - Nov 2021",
+      "title": "Shippop (Outsource) Jan 2022 - Present",
+      "description": "Shippop Global is a product courier aggregator around the world to make transport parcels easier. I have role in Frontend developer. we work as Scrum, gathering requirement from PO, development in Next Js and build API Gateway via Nextjs, using version control of Azure DevOps and building CI/CD that contain Automate testing by Cypress and setting Infrastacture."
+    },
+    "card-3": {
+      "title": "Shippop (Cooperation Education) Aug 2021 - Nov 2021",
       "description": "All Express project is a product that drive by Multi level marketing business. this product was built for solving delivering a parcel. This product is as POS (Platform as a service). You can be like a store page without store front. I'm involve with team and product owner to build our vision of post office on webpage."
     }
   },
   "expertise": {
-    "title": "Software Devlopment",
+    "title": "Software Development",
     "description": "In order to achieve the veriest result of product, a must be choosing the tool which appropriate the product. also choosing suited algorithm and the best practice to approach our goal. for my best solution for choosing tooling is using SSR to develop the product that base on security and hight performance.",
     "quotation": "Use the right tool with the right job."
   },

@@ -182,15 +182,6 @@ const StoryLine: React.FC<StoryLineProps> = () => {
           }}
         />
         <Box
-          ref={titleMask}
-          sx={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            top: `0%`,
-          }}
-        />
-        <Box
           ref={summaryMask}
           sx={{
             position: 'absolute',
