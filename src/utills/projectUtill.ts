@@ -3,6 +3,16 @@ type Translate = (text: string) => string;
 export const projectShowcase = (t: Translate) => {
   return [
     {
+      role: t('projects.list.6.role'),
+      title: t('projects.list.6.title'),
+      description: t('projects.list.6.description'),
+      reach: {
+        link: '/static/images/project/showcase/micro.png',
+      },
+      stack: [t('projects.list.6.stack.0'), t('projects.list.6.stack.1')],
+      image: '/static/images/project/showcase/micro.png',
+    },
+    {
       role: t('projects.list.0.role'),
       title: t('projects.list.0.title'),
       description: t('projects.list.0.description'),

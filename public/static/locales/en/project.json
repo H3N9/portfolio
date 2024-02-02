@@ -9,6 +9,15 @@
   "projects": {
     "title": "Some things i've built",
     "list": {
+      "6": {
+        "title": "R&D Micro Frontend",
+        "role": "Frontend",
+        "description": "Research & Design diagram's micro frontend. This diagram design by solving problem of Micro Frontend redundancy components usage. But this design is complexity connection between client and server.",
+        "stack": {
+          "0": "Nextjs",
+          "1": "Module Federation"
+        }
+      },
       "0": {
         "title": "All Express",
         "role": "Frontend",

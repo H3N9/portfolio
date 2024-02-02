@@ -12,11 +12,11 @@
   },
   "experiences": {
     "card-1": {
-      "title": "Fuchsia (Full time) มี.ค. 2023 - ปัจจุบัน",
-      "description": "โครงการ GISX เป็นโครงการระบบประกันกลุ่มหลักของภายในบริษัท ตัวโครงการนี้อยู่ในขั้นตอนการผลิต ซึ่งฉันได้มีบทบาทในการทำส่วนหน้าบ้าน (Frontend) ในการผลิต ตัวโครงการมีมูลค่ามากกว่า 500 ล้านบาทและฉันได้เป็นส่วนหนึ่งในการพัฒนา โครงการจัดทำขึ้นเพื่อแก้ปัญหาและปรับเปลี่ยนระบบเก่ามาเป็นระบบใหม่ ผมได้มีส่วนในการวางโครงสร้างพื่นฐานของระบบและนำทีมในการทำ Feature หลักของระบบ เป็นที่ปรึกษาสำหรับภาคธุรกิจข้อจำกัดหรือ Trade off ของระบบให้ suggestion กับฝ่ายธุรกิจ และให้คำปรึกษาในการทำงานเชิงระบบรวมไปถึงการ Review code implementation"
+      "title": "Fuchsia (Full time) มี.ค. 2023 - Present",
+      "description": "The GISX project is the company's core group insurance system project. This project is currently in production. In which I have a role in doing the frontend of the house. The project has a value of more than 500 million baht and I have been a part of its development. The project was created to solve problems and change the lagacy system to the new system. I was involved in setting up the foundation structure of the system by using Next js along with Module Federation to create a Micro Frontend system from doing R&D until the structure was connected between Server and Client. And I have been involved in leading the team to make the major features of the system, also being a consultant for the business sector, limiting or Trade off the system, giving suggestions to the business department and provide advice on systematic work, including reviewing code implementation every round in the weekly Sync meeting."
     },
     "card-2": {
-      "title": "Shippop (Outsource) Jan 2022 - Present",
+      "title": "Shippop (Outsource) Jan 2022 - Feb 2023",
       "description": "Shippop Global is a product courier aggregator around the world to make transport parcels easier. I have role in Frontend developer. we work as Scrum, gathering requirement from PO, development in Next Js and build API Gateway via Nextjs, using version control of Azure DevOps and building CI/CD that contain Automate testing by Cypress and setting Infrastacture."
     },
     "card-3": {

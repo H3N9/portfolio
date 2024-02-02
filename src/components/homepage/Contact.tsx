@@ -14,21 +14,23 @@ const Contact: React.FC<ContactProps> = () => {
 
   useEffect(() => {
     const animation = gsap.context(() => {
-      const tl = gsap.timeline();
-      tl.from(contactContainer.current, {
-        yPercent: -100,
-        duration: 1,
-        autoAlpha: 0,
-      });
-      ScrollTrigger.create({
-        trigger: container.current,
-
-        start: '+=20% center',
-        animation: tl,
-      });
+      if (contactContainer.current) {
+        const tl = gsap.timeline();
+        tl.from(contactContainer.current, {
+          yPercent: -100,
+          duration: 1,
+          autoAlpha: 0,
+        });
+        ScrollTrigger.create({
+          trigger: container.current,
+          start: '+=20% center',
+          animation: tl,
+          toggleActions: 'play reverse play reverse',
+        });
+      }
     });
     return () => animation.clear();
-  }, []);
+  }, [contactContainer]);
 
   return (
     <Box
