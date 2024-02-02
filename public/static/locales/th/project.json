@@ -7,8 +7,17 @@
     "description": "PenPals เป็นแอปพลิเคชั่นมือถือ สร้างขึ้นโดย React Native PenPals มีแนวคิดเป็น Interpal หรือ Facebook ที่เราสามารถแชทกับเพื่อน โพสต์กิจกรรม แจ้งเตือน และโซเชียลของเพื่อน แต่ความแตกต่างของ PenPals คือแท็ก แท็กเป็นตัวระบุความชอบส่วนบุคคลเพื่อสร้างความสัมพันธ์ระหว่างกัน"
   },
   "projects": {
-    "title": "Some things i've built",
+    "title": "ผลงานบางส่วน",
     "list": {
+      "6": {
+        "title": "วิจัยและการออกแบบ Micro Frontend",
+        "role": "Frontend",
+        "description": "แผนภาพ Micro Frontend ของการวิจัยและการออกแบบ การออกแบบแผนภาพนี้็เป็นการแก้ปัญหาการใช้ Components ซ้ำซ้อนของ Micro Frontend แต่การออกแบบนี้มีเชื่อมต่อที่ซับซ้อนระหว่างไคลเอนต์และเซิร์ฟเวอร์",
+        "stack": {
+          "0": "Nextjs",
+          "1": "Module Federation"
+        }
+      },
       "0": {
         "title": "All Express",
         "role": "Frontend",

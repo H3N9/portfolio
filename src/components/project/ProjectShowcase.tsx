@@ -1,6 +1,6 @@
 import { Box, Container, Typography, useTheme } from '@mui/material';
 import { projectShowcase } from '@utills/projectUtill';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -23,10 +23,10 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = () => {
     const animation = gsap.context(() => {
       const mediaMatch = gsap.matchMedia();
       mediaMatch.add(`(min-width: ${mdSize}px)`, () => {
-        const projectChidren = projectContainer.current?.children ?? [];
-        const allProjectChidren: Array<HTMLElement> =
-          gsap.utils.toArray(projectChidren);
-        allProjectChidren.forEach((element: HTMLElement) => {
+        const projectChildren = projectContainer.current?.children ?? [];
+        const allProjectChildren: Array<HTMLElement> =
+          gsap.utils.toArray(projectChildren);
+        allProjectChildren.forEach((element: HTMLElement) => {
           ScrollTrigger.create({
             trigger: element,
             start: 'top center',
@@ -39,13 +39,14 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = () => {
         });
       });
       mediaMatch.add(`(max-width: ${mdSize}px)`, () => {
-        const projectChidrenMobile =
+        const projectChildrenMobile =
           projectContainerMobile.current?.children ?? [];
 
-        const allProjectChidrenMobile: Array<HTMLElement> =
-          gsap.utils.toArray(projectChidrenMobile);
+        const allProjectChildrenMobile: Array<HTMLElement> = gsap.utils.toArray(
+          projectChildrenMobile
+        );
 
-        allProjectChidrenMobile.forEach((element: HTMLElement) => {
+        allProjectChildrenMobile.forEach((element: HTMLElement) => {
           ScrollTrigger.create({
             trigger: element,
             start: 'top center',

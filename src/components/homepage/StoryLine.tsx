@@ -23,7 +23,7 @@ interface TittleHeadProps {
   title: string;
 }
 
-interface DescriptTextProps {
+interface DescriptionTextProps {
   description: string;
 }
 
@@ -31,7 +31,7 @@ interface StoryLineProps {}
 
 const StoryLine: React.FC<StoryLineProps> = () => {
   const { t } = useTranslation('homepage');
-  const lengthContentMask = 3;
+  const lengthContentMask = 4;
   const scaleHeight = 1.5;
   const container = useRef<HTMLDivElement>(null);
   const contentMask = useRef<HTMLDivElement>(null);
@@ -41,122 +41,129 @@ const StoryLine: React.FC<StoryLineProps> = () => {
   const summaryMask = useRef<HTMLElement>(null);
   const containerSummary = useRef<HTMLElement>(null);
   const containerTextSummary = useRef<HTMLElement>(null);
-  const deviecesContainer = useRef<HTMLElement>(null);
+  const devicesContainer = useRef<HTMLElement>(null);
   const toolContainer = useRef<HTMLElement>(null);
   const router = useRouter();
 
   useEffect(() => {
     const animation = gsap.context(() => {
-      const windowHeight = window.innerHeight * scaleHeight;
-      const contentMaskChildren = contentMask.current?.children ?? [];
-      const contentContainerChildren = contentContainer.current?.children ?? [];
-      const firstTitle: any = titleContainer.current?.firstChild;
-      const lastTitle: any = titleContainer.current?.lastChild;
+      if (
+        contentMask.current &&
+        contentContainer.current &&
+        titleContainer.current
+      ) {
+        const windowHeight = window.innerHeight * scaleHeight;
+        const contentMaskChildren = contentMask.current.children ?? [];
+        const contentContainerChildren =
+          contentContainer.current.children ?? [];
+        const firstTitle: any = titleContainer.current.firstChild;
+        const lastTitle: any = titleContainer.current.lastChild;
 
-      const allContentMask: Array<HTMLElement> =
-        gsap.utils.toArray(contentMaskChildren);
-      const allContentContainer: Array<HTMLElement> = gsap.utils.toArray(
-        contentContainerChildren
-      );
+        const allContentMask: Array<HTMLElement> =
+          gsap.utils.toArray(contentMaskChildren);
+        const allContentContainer: Array<HTMLElement> = gsap.utils.toArray(
+          contentContainerChildren
+        );
 
-      ScrollTrigger.create({
-        trigger: container.current,
-        end: `+=${windowHeight * 4} top`,
-        pin: true,
-      });
-
-      ScrollTrigger.create({
-        trigger: titleMask.current,
-        start: `+=${windowHeight * 2}`,
-        end: `+=${windowHeight * 2}`,
-        pin: true,
-        animation: gsap
-          .timeline({ defaults: { duration: 1 } })
-          .to(firstTitle, {
-            width: 0,
-          })
-          .to(lastTitle, {
-            width: '100%',
-          }),
-        toggleActions: 'play reverse play reverse',
-      });
-
-      ScrollTrigger.create({
-        trigger: summaryMask.current,
-        animation: gsap
-          .timeline()
-          .from(containerSummary.current, {
-            width: 0,
-            height: 0,
-            duration: 0.3,
-            ease: 'none',
-          })
-          .to(containerSummary.current, {
-            width: Math.max(window.innerHeight, window.innerWidth) * 2,
-            ease: 'none',
-            height: Math.max(window.innerHeight, window.innerWidth) * 2,
-            duration: 0.3,
-          }),
-        toggleActions: 'play none none reverse',
-        pin: true,
-      });
-
-      allContentMask.forEach((element: HTMLElement, index: number): void => {
-        const timeline = gsap.timeline();
-        timeline
-          .from(allContentContainer[index]?.firstChild, {
-            opacity: 0,
-            yPercent: 10,
-            delay: 0.8,
-          })
-          .from(allContentContainer[index]?.lastChild, {
-            opacity: 0,
-            yPercent: 10,
-          });
-        if (index === 1)
-          timeline.to(
-            [
-              deviecesContainer.current || [],
-              deviecesContainer.current?.children || [],
-            ],
-            {
-              stagger: {
-                each: 0.1,
-                from: 'start',
-                ease: 'back.in',
-              },
-              yPercent: 5,
-              opacity: 1,
-            }
-          );
-        if (index === allContentMask.length - 1)
-          timeline.to(
-            [
-              toolContainer.current || [],
-              toolContainer.current?.children || [],
-            ],
-            {
-              opacity: 1,
-              yoyo: true,
-              stagger: {
-                each: 0.1,
-                from: 'center',
-                axis: 'y',
-                grid: [2, 4],
-              },
-            }
-          );
         ScrollTrigger.create({
-          trigger: element,
-          end: `+=${windowHeight}`,
+          trigger: container.current,
+          end: `+=${windowHeight * (lengthContentMask + 1)} top`,
           pin: true,
-          animation: timeline,
+        });
+
+        ScrollTrigger.create({
+          trigger: titleMask.current,
+          start: `+=${windowHeight * 2}`,
+          end: `+=${windowHeight * 2}`,
+          pin: true,
+          animation: gsap
+            .timeline({ defaults: { duration: 1 } })
+            .to(firstTitle, {
+              width: 0,
+            })
+            .to(lastTitle, {
+              width: '100%',
+            }),
           toggleActions: 'play reverse play reverse',
         });
-      });
+
+        ScrollTrigger.create({
+          trigger: summaryMask.current,
+          animation: gsap
+            .timeline()
+            .from(containerSummary.current, {
+              width: 0,
+              height: 0,
+              duration: 0.3,
+              ease: 'none',
+            })
+            .to(containerSummary.current, {
+              width: Math.max(window.innerHeight, window.innerWidth) * 2,
+              ease: 'none',
+              height: Math.max(window.innerHeight, window.innerWidth) * 2,
+              duration: 0.3,
+            }),
+          toggleActions: 'play none none reverse',
+          pin: true,
+        });
+
+        allContentMask.forEach((element: HTMLElement, index: number): void => {
+          const timeline = gsap.timeline();
+          timeline
+            .from(allContentContainer[index]?.firstChild, {
+              opacity: 0,
+              yPercent: 10,
+              delay: 0.8,
+            })
+            .from(allContentContainer[index]?.lastChild, {
+              opacity: 0,
+              yPercent: 10,
+            });
+          if (index === 2)
+            timeline.to(
+              [
+                devicesContainer.current || [],
+                devicesContainer.current?.children || [],
+              ],
+              {
+                stagger: {
+                  each: 0.1,
+                  from: 'start',
+                  ease: 'back.in',
+                },
+                yPercent: 5,
+                opacity: 1,
+              }
+            );
+          if (index === allContentMask.length - 1)
+            timeline.to(
+              [
+                toolContainer.current || [],
+                toolContainer.current?.children || [],
+              ],
+              {
+                opacity: 1,
+                yoyo: true,
+                stagger: {
+                  each: 0.1,
+                  from: 'center',
+                  axis: 'y',
+                  grid: [2, 4],
+                },
+              }
+            );
+          ScrollTrigger.create({
+            trigger: element,
+            end: `+=${windowHeight}`,
+            pin: true,
+            animation: timeline,
+            toggleActions: 'play reverse play reverse',
+          });
+        });
+      }
     });
     return () => animation.clear();
-  }, []);
+  }, [containerSummary, contentMask, titleContainer]);
 
   return (
     <Box sx={{ width: '100%', height: 'fit-content' }}>
@@ -172,15 +179,6 @@ const StoryLine: React.FC<StoryLineProps> = () => {
           bgcolor: 'secondary.main',
         }}
       >
-        <Box
-          ref={titleMask}
-          sx={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            top: `0%`,
-          }}
-        />
         <Box
           ref={titleMask}
           sx={{
@@ -358,7 +356,7 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                     spacing={2}
                   >
                     <Grid item xs={12}>
-                      <DescriptText
+                      <DescriptionText
                         description={t('experiences.card-1.description')}
                       />
                     </Grid>
@@ -389,7 +387,7 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                     spacing={2}
                   >
                     <Grid item xs={12}>
-                      <DescriptText
+                      <DescriptionText
                         description={t('experiences.card-2.description')}
                       />
                     </Grid>
@@ -404,7 +402,37 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                           width: '100%',
                           height: '100%',
                         }}
-                        ref={deviecesContainer}
+                        ref={devicesContainer}
+                      >
+                        <DevicesPack />
+                      </Box>
+                    </Grid>
+                  </Grid>
+                </BoxLeft>
+                <BoxLeft>
+                  <TitleHead title={t('experiences.card-3.title')} />
+                  <Grid
+                    container
+                    sx={{ maxHeight: '90%', height: 1 }}
+                    spacing={2}
+                  >
+                    <Grid item xs={12}>
+                      <DescriptionText
+                        description={t('experiences.card-3.description')}
+                      />
+                    </Grid>
+                    <Grid
+                      item
+                      md={12}
+                      sx={{ display: 'flex', alignItems: 'flex-end' }}
+                    >
+                      <Box
+                        sx={{
+                          position: 'relative',
+                          width: '100%',
+                          height: '100%',
+                        }}
+                        ref={devicesContainer}
                       >
                         <DevicesPack />
                       </Box>
@@ -415,7 +443,9 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                   <TitleHead title={t('expertise.title')} />
                   <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>
-                      <DescriptText description={t('expertise.description')} />
+                      <DescriptionText
+                        description={t('expertise.description')}
+                      />
                     </Grid>
                     <Grid item xs={12} md={6}>
                       <Box
@@ -462,7 +492,7 @@ const TitleHead: React.FC<TittleHeadProps> = ({ title }) => {
   );
 };
 
-const DescriptText: React.FC<DescriptTextProps> = ({ description }) => {
+const DescriptionText: React.FC<DescriptionTextProps> = ({ description }) => {
   return (
     <Typography
       sx={{
