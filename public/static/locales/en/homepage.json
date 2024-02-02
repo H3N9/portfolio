@@ -12,7 +12,7 @@
   },
   "experiences": {
     "card-1": {
-      "title": "Fuchsia (Full time) มี.ค. 2023 - Present",
+      "title": "Fuchsia (Full time) Mar 2023 - Present",
       "description": "The GISX project is the company's core group insurance system project. This project is currently in production. In which I have a role in doing the frontend of the house. The project has a value of more than 500 million baht and I have been a part of its development. The project was created to solve problems and change the lagacy system to the new system. I was involved in setting up the foundation structure of the system by using Next js along with Module Federation to create a Micro Frontend system from doing R&D until the structure was connected between Server and Client. And I have been involved in leading the team to make the major features of the system, also being a consultant for the business sector, limiting or Trade off the system, giving suggestions to the business department and provide advice on systematic work, including reviewing code implementation every round in the weekly Sync meeting."
     },
     "card-2": {
