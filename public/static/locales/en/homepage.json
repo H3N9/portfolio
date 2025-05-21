@@ -12,16 +12,20 @@
   },
   "experiences": {
     "card-1": {
-      "title": "Fuchsia (Full time) Mar 2023 - Present",
-      "description": "The GISX project is the company's core group insurance system project. This project is currently in production. In which I have a role in doing the frontend of the house. The project has a value of more than 500 million baht and I have been a part of its development. The project was created to solve problems and change the lagacy system to the new system. I was involved in setting up the foundation structure of the system by using Next js along with Module Federation to create a Micro Frontend system from doing R&D until the structure was connected between Server and Client. And I have been involved in leading the team to make the major features of the system, also being a consultant for the business sector, limiting or Trade off the system, giving suggestions to the business department and provide advice on systematic work, including reviewing code implementation every round in the weekly Sync meeting."
+      "title": "MTL: Frontend (Full time) Mar 2023 - Apr 2024",
+      "description": "The GISX project is the company's core group insurance system project. This project is currently in production. In which I have a role in doing the frontend of the house. The project has a value of more than 500 million baht and I have been a part of its development. The project was created to solve problems and change the legacy system to the new system. I was involved in setting up the foundation structure of the system by using Next js along with Module Federation to create a Micro Frontend system from doing R&D until the structure was connected between Server and Client. And I have been involved in leading the team to make the major features of the system, also being a consultant for the business sector, limiting or Trade off the system, giving suggestions to the business department and provide advice on systematic work, including reviewing code implementation every round in the weekly Sync meeting."
     },
     "card-2": {
-      "title": "Shippop (Outsource) Jan 2022 - Feb 2023",
-      "description": "Shippop Global is a product courier aggregator around the world to make transport parcels easier. I have role in Frontend developer. we work as Scrum, gathering requirement from PO, development in Next Js and build API Gateway via Nextjs, using version control of Azure DevOps and building CI/CD that contain Automate testing by Cypress and setting Infrastacture."
+      "title": "Shippop: Frontend (Contract) Jan 2022 - Feb 2023",
+      "description": "Shippop Global is a product courier aggregator around the world to make transport parcels easier. I have role in Frontend developer. we work as Scrum, gathering requirement from PO, development in Next Js and build API Gateway via Nextjs, using version control of Azure DevOps and building CI/CD that contain Automate testing by Cypress and setting Infrastructure."
     },
     "card-3": {
-      "title": "Shippop (Cooperation Education) Aug 2021 - Nov 2021",
+      "title": "Shippop: Frontend (Cooperation Education) Aug 2021 - Nov 2021",
       "description": "All Express project is a product that drive by Multi level marketing business. this product was built for solving delivering a parcel. This product is as POS (Platform as a service). You can be like a store page without store front. I'm involve with team and product owner to build our vision of post office on webpage."
+    },
+    "card-4": {
+      "title": "Ascend Commerce: Fullstack (Full time) May 2024 - Present",
+      "description": "Lotus's CMS system is a system for managing products, prices, promotions and all display within Lotus's mobile allications and websites, including Gofresh and Hypermarket. This project is for replace legacy system from Adobe Magento. I'm the leader in Frontend CMS, I design User Journey and UX/UI entire system, also design some communication and implementation API for CMS. I also monitoring via Grafana and improving after integrated new system. I'm consultant about user journey and security approach and i also implement security to protect system breach."
     }
   },
   "expertise": {

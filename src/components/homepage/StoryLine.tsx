@@ -31,7 +31,7 @@ interface StoryLineProps {}
 
 const StoryLine: React.FC<StoryLineProps> = () => {
   const { t } = useTranslation('homepage');
-  const lengthContentMask = 4;
+  const lengthContentMask = 5;
   const scaleHeight = 1.5;
   const container = useRef<HTMLDivElement>(null);
   const contentMask = useRef<HTMLDivElement>(null);
@@ -347,6 +347,38 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                 }}
                 ref={contentContainer}
               >
+                <BoxLeft>
+                  <TitleHead title={t('experiences.card-4.title')} />
+
+                  <Grid
+                    container
+                    sx={{ maxHeight: '90%', height: 1 }}
+                    spacing={2}
+                  >
+                    <Grid item xs={12}>
+                      <DescriptionText
+                        description={t('experiences.card-4.description')}
+                      />
+                    </Grid>
+                    <Grid
+                      item
+                      md={12}
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'flex-end',
+                        position: 'relative',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Image
+                        src={'/static/images/homepage/lotus.png'}
+                        alt="progress"
+                        width={350}
+                        height={80}
+                      />
+                    </Grid>
+                  </Grid>
+                </BoxLeft>
                 <BoxLeft>
                   <TitleHead title={t('experiences.card-1.title')} />
 

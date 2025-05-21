@@ -97,7 +97,7 @@ const HeadSection: React.FC<HeadSectionProps> = () => {
             sx={{ opacity: 0, fontSize: 'clamp(20px, 1.8vw, 40px)' }}
             ref={secondaryText}
           >
-            SOFTWARE ENGINEER & FRONT END DEVELOPER.
+            SOFTWARE ENGINEER & FULLSTACK DEVELOPER.
           </Typography>
         </Box>
       </Container>
