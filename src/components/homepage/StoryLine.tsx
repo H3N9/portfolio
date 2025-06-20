@@ -1,6 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { Box } from '@mui/system';
-import { Container, Typography, styled, Grid, Button } from '@mui/material';
+import {
+  Container,
+  Typography,
+  styled,
+  Grid,
+  Button,
+  TypographyProps,
+} from '@mui/material';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -23,7 +30,7 @@ interface TittleHeadProps {
   title: string;
 }
 
-interface DescriptionTextProps {
+interface DescriptionTextProps extends TypographyProps {
   description: string;
 }
 
@@ -119,7 +126,7 @@ const StoryLine: React.FC<StoryLineProps> = () => {
               opacity: 0,
               yPercent: 10,
             });
-          if (index === 2)
+          if (index === 3)
             timeline.to(
               [
                 devicesContainer.current || [],
@@ -365,17 +372,40 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                       md={12}
                       sx={{
                         display: 'flex',
-                        alignItems: 'flex-end',
                         position: 'relative',
                         justifyContent: 'center',
                       }}
                     >
-                      <Image
-                        src={'/static/images/homepage/lotus.png'}
-                        alt="progress"
-                        width={350}
-                        height={80}
-                      />
+                      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                        <Typography>
+                          <DescriptionText
+                            sx={{ fontWeight: 600 }}
+                            description={t('experiences.responsibility')}
+                          />
+                        </Typography>
+                        <ul>
+                          <li>
+                            <DescriptionText
+                              description={t('experiences.card-4.res-1')}
+                            />
+                          </li>
+                          <li>
+                            <DescriptionText
+                              description={t('experiences.card-1.res-2')}
+                            />
+                          </li>
+                          <li>
+                            <DescriptionText
+                              description={t('experiences.card-4.res-3')}
+                            />
+                          </li>
+                          <li>
+                            <DescriptionText
+                              description={t('experiences.card-4.res-4')}
+                            />
+                          </li>
+                        </ul>
+                      </Box>
                     </Grid>
                   </Grid>
                 </BoxLeft>
@@ -397,17 +427,40 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                       md={12}
                       sx={{
                         display: 'flex',
-                        alignItems: 'flex-end',
                         position: 'relative',
                         justifyContent: 'center',
                       }}
                     >
-                      <Image
-                        src={'/static/images/homepage/progress.png'}
-                        alt="progress"
-                        width={400}
-                        height={300}
-                      />
+                      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                        <Typography>
+                          <DescriptionText
+                            sx={{ fontWeight: 600 }}
+                            description={t('experiences.responsibility')}
+                          />
+                        </Typography>
+                        <ul>
+                          <li>
+                            <DescriptionText
+                              description={t('experiences.card-1.res-1')}
+                            />
+                          </li>
+                          <li>
+                            <DescriptionText
+                              description={t('experiences.card-1.res-2')}
+                            />
+                          </li>
+                          <li>
+                            <DescriptionText
+                              description={t('experiences.card-1.res-3')}
+                            />
+                          </li>
+                          <li>
+                            <DescriptionText
+                              description={t('experiences.card-1.res-4')}
+                            />
+                          </li>
+                        </ul>
+                      </Box>
                     </Grid>
                   </Grid>
                 </BoxLeft>
@@ -428,16 +481,12 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                       md={12}
                       sx={{ display: 'flex', alignItems: 'flex-end' }}
                     >
-                      <Box
-                        sx={{
-                          position: 'relative',
-                          width: '100%',
-                          height: '100%',
-                        }}
-                        ref={devicesContainer}
-                      >
-                        <DevicesPack />
-                      </Box>
+                      <Image
+                        src={'/static/images/homepage/progress.png'}
+                        alt="progress"
+                        width={400}
+                        height={300}
+                      />
                     </Grid>
                   </Grid>
                 </BoxLeft>
@@ -524,13 +573,18 @@ const TitleHead: React.FC<TittleHeadProps> = ({ title }) => {
   );
 };
 
-const DescriptionText: React.FC<DescriptionTextProps> = ({ description }) => {
+const DescriptionText: React.FC<DescriptionTextProps> = ({
+  description,
+  ...props
+}) => {
   return (
     <Typography
+      {...props}
       sx={{
         fontSize: { md: 20, xs: 16 },
         textIndent: 46,
         textAlign: 'justify',
+        ...props.sx,
       }}
     >
       {description}

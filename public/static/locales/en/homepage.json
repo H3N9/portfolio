@@ -11,9 +11,14 @@
     "title-2": "Expertise"
   },
   "experiences": {
+    "responsibility": "My responsibilities included:",
     "card-1": {
       "title": "MTL: Frontend (Full time) Mar 2023 - Apr 2024",
-      "description": "The GISX project is the company's core group insurance system project. This project is currently in production. In which I have a role in doing the frontend of the house. The project has a value of more than 500 million baht and I have been a part of its development. The project was created to solve problems and change the legacy system to the new system. I was involved in setting up the foundation structure of the system by using Next js along with Module Federation to create a Micro Frontend system from doing R&D until the structure was connected between Server and Client. And I have been involved in leading the team to make the major features of the system, also being a consultant for the business sector, limiting or Trade off the system, giving suggestions to the business department and provide advice on systematic work, including reviewing code implementation every round in the weekly Sync meeting."
+      "description": "The GISX project is the company’s core system for managing group insurance and is currently live in production. I contributed significantly to the frontend development, particularly in establishing the foundational architecture of the system. This high-impact project, valued at over 500 million baht, aimed to replace a legacy platform with a modern solution.",
+      "res-1": "Designing and implementing a Micro Frontend architecture using Next.js and Module Federation, from initial R&D through to successful integration between server and client.",
+      "res-2": "Leading the development of major frontend features and collaborating closely with both technical and business teams.",
+      "res-3": "Acting as a technical consultant to the business unit, providing guidance on system trade-offs, feature feasibility, and strategic decisions.",
+      "res-4": "Participating in weekly sync meetings to review code, ensure best practices, and maintain code quality across development cycles."
     },
     "card-2": {
       "title": "Shippop: Frontend (Contract) Jan 2022 - Feb 2023",
@@ -25,7 +30,11 @@
     },
     "card-4": {
       "title": "Ascend Commerce: Fullstack (Full time) May 2024 - Present",
-      "description": "Lotus's CMS system is a system for managing products, prices, promotions and all display within Lotus's mobile allications and websites, including Gofresh and Hypermarket. This project is for replace legacy system from Adobe Magento. I'm the leader in Frontend CMS, I design User Journey and UX/UI entire system, also design some communication and implementation API for CMS. I also monitoring via Grafana and improving after integrated new system. I'm consultant about user journey and security approach and i also implement security to protect system breach."
+      "description": "The Lotus CMS system is a centralized platform for managing products, pricing, promotions, and content across Lotus’s mobile applications and websites, including Gofresh and Hypermarket. The project was initiated to replace a legacy system based on Adobe Magento.",
+      "res-1": "Led the frontend development of the CMS Lotus project, overseeing implementation and ensuring alignment with project goals.",
+      "res-2": "Provided consultation on user journey design and security best practices; also served as a code reviewer to maintain code quality and consistency.",
+      "res-3": "Designed frontend architecture, including UX/UI elements and API integration to support seamless user interaction and system functionality.",
+      "res-4": "Diagnosed and resolved production issues, ensuring high availability and performance through proactive monitoring and troubleshooting."
     }
   },
   "expertise": {
