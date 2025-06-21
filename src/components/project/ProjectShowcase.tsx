@@ -21,6 +21,7 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = () => {
 
   useEffect(() => {
     const animation = gsap.context(() => {
+      ScrollTrigger.refresh();
       const mediaMatch = gsap.matchMedia();
       mediaMatch.add(`(min-width: ${mdSize}px)`, () => {
         const projectChildren = projectContainer.current?.children ?? [];

@@ -391,7 +391,7 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                           </li>
                           <li>
                             <DescriptionText
-                              description={t('experiences.card-1.res-2')}
+                              description={t('experiences.card-4.res-2')}
                             />
                           </li>
                           <li>
@@ -479,7 +479,11 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                     <Grid
                       item
                       md={12}
-                      sx={{ display: 'flex', alignItems: 'flex-end' }}
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'flex-end',
+                      }}
                     >
                       <Image
                         src={'/static/images/homepage/progress.png'}
@@ -524,9 +528,25 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                   <TitleHead title={t('expertise.title')} />
                   <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>
-                      <DescriptionText
-                        description={t('expertise.description')}
-                      />
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'space-between',
+                          height: '100%',
+                        }}
+                      >
+                        <DescriptionText
+                          description={t('expertise.description')}
+                        />
+                        <Typography
+                          sx={{
+                            fontStyle: 'italic',
+                            fontSize: { md: 20, sm: 16, xs: 12 },
+                            fontWeight: 600,
+                          }}
+                        >{`"${t('expertise.quotation')}"`}</Typography>
+                      </Box>
                     </Grid>
                     <Grid item xs={12} md={6}>
                       <Box
@@ -562,7 +582,7 @@ const TitleHead: React.FC<TittleHeadProps> = ({ title }) => {
   return (
     <Typography
       sx={{
-        fontSize: { md: 24, xs: 20 },
+        fontSize: { md: 24, sm: 20, xs: 14 },
         maxHeight: '20%',
         minHeight: 54,
         fontWeight: 'bold',
@@ -581,9 +601,8 @@ const DescriptionText: React.FC<DescriptionTextProps> = ({
     <Typography
       {...props}
       sx={{
-        fontSize: { md: 20, xs: 16 },
+        fontSize: { md: 20, sm: 16, xs: 11 },
         textIndent: 46,
-        textAlign: 'justify',
         ...props.sx,
       }}
     >

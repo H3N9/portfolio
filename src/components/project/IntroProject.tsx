@@ -12,9 +12,10 @@ const IntroProject: React.FC<IntroProjectProps> = () => {
     <Box
       sx={{
         width: '100%',
+        mt: 6,
       }}
     >
-      <Container sx={{ marginTop: { md: 0, xs: navHeight / 8 } }}>
+      <Container sx={{ marginTop: { md: 0, xs: navHeight } }}>
         <Grid container sx={{ minHeight: '100vh' }}>
           <Grid
             item

@@ -39,7 +39,7 @@
   },
   "expertise": {
     "title": "Software Development",
-    "description": "In order to achieve the veriest result of product, a must be choosing the tool which appropriate the product. also choosing suited algorithm and the best practice to approach our goal. for my best solution for choosing tooling is using SSR to develop the product that base on security and hight performance.",
+    "description": "To achieve the most effective outcome for a product, it is essential to select tools that are appropriate for the product's requirements. Additionally, choosing the right algorithm and following best practices are crucial for reaching our goals efficiently. In my opinion, the best solution for tooling is to use Server-Side Rendering (SSR), as it provides strong security and high performance for product development.",
     "quotation": "Use the right tool with the right job."
   },
   "conclusion": {
