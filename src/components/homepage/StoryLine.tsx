@@ -38,7 +38,7 @@ interface StoryLineProps {}
 
 const StoryLine: React.FC<StoryLineProps> = () => {
   const { t } = useTranslation('homepage');
-  const lengthContentMask = 5;
+  const lengthContentMask = 6;
   const scaleHeight = 1.5;
   const container = useRef<HTMLDivElement>(null);
   const contentMask = useRef<HTMLDivElement>(null);
@@ -354,6 +354,56 @@ const StoryLine: React.FC<StoryLineProps> = () => {
                 }}
                 ref={contentContainer}
               >
+                <BoxLeft>
+                  <TitleHead title={t('experiences.card-5.title')} />
+
+                  <Grid
+                    container
+                    sx={{ maxHeight: '90%', height: 1 }}
+                    spacing={2}
+                  >
+                    <Grid item xs={12}>
+                      <DescriptionText
+                        description={t('experiences.card-5.description')}
+                      />
+                    </Grid>
+                    <Grid
+                      item
+                      md={12}
+                      sx={{
+                        display: 'flex',
+                        position: 'relative',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                        <Typography>
+                          <DescriptionText
+                            sx={{ fontWeight: 600 }}
+                            description={t('experiences.responsibility')}
+                          />
+                        </Typography>
+                        <ul>
+                          <li>
+                            <DescriptionText
+                              description={t('experiences.card-5.res-1')}
+                            />
+                          </li>
+                          <li>
+                            <DescriptionText
+                              description={t('experiences.card-5.res-2')}
+                            />
+                          </li>
+                          <li>
+                            <DescriptionText
+                              description={t('experiences.card-5.res-3')}
+                            />
+                          </li>
+                        </ul>
+                      </Box>
+                    </Grid>
+                  </Grid>
+                </BoxLeft>
                 <BoxLeft>
                   <TitleHead title={t('experiences.card-4.title')} />
 

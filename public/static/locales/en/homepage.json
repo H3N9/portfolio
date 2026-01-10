@@ -29,12 +29,19 @@
       "description": "All Express project is a product that drive by Multi level marketing business. this product was built for solving delivering a parcel. This product is as POS (Platform as a service). You can be like a store page without store front. I'm involve with team and product owner to build our vision of post office on webpage."
     },
     "card-4": {
-      "title": "Ascend Commerce: Fullstack (Full time) May 2024 - Present",
+      "title": "Ascend Commerce: Fullstack (Full time) May 2024 - Aug 2025",
       "description": "The Lotus CMS system is a centralized platform for managing products, pricing, promotions, and content across Lotus’s mobile applications and websites, including Gofresh and Hypermarket. The project was initiated to replace a legacy system based on Adobe Magento.",
       "res-1": "Led the frontend development of the CMS Lotus project, overseeing implementation and ensuring alignment with project goals.",
       "res-2": "Provided consultation on user journey design and security best practices; also served as a code reviewer to maintain code quality and consistency.",
       "res-3": "Designed frontend architecture, including UX/UI elements and API integration to support seamless user interaction and system functionality.",
       "res-4": "Diagnosed and resolved production issues, ensuring high availability and performance through proactive monitoring and troubleshooting."
+    },
+    "card-5": {
+      "title": "NocNoc: Software Engineer (Full time) Aug 2025 - Jan 2026",
+      "description": "Regional Platform is an internal system developed to replace the legacy NocNoc system. It consists of multiple subsystems, including Buyer, Seller, and CMS systems. I am responsible for overseeing all Frontend systems, ensuring code quality, defining frontend architecture, and driving technical direction and decision-making.",
+      "res-1": "Designed system architecture for Buyer, Seller, and Admin platforms",
+      "res-2": "Led performance-driven development of Buyer features (PDP, PLP, Landing Pages) with focus on SEO, bundle optimization, security, and traffic efficiency",
+      "res-3": "Led problem analysis and solution design aligned with business goals, making strategic decisions and defining the technical direction across all three systems."
     }
   },
   "expertise": {
